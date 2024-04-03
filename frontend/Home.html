@@ -1,98 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HMS</title>
-<style>
-  /* Define your CSS styles here */
-  /* Note: You may need to adjust styles for proper layout and appearance */
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS</title>
+    <!-- Assuming you have linked necessary stylesheets here -->
+    <style>
+        /* CSS styling */
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #header {
+            background-color: #000000;
+            padding: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid grey;
+        }
+
+        #header a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        #sidebar {
+            width: 300px;
+            background-color: #000000;
+            padding-top: 50px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-button {
+            padding: 20px 24px; /* Increased padding for larger buttons */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px; /* Increased font size for larger buttons */
+        }
+
+        .sidebar-button:hover {
+            background-color: #838080;
+        }
+
+        .sidebar-button:not(:last-child) {
+            margin-bottom: 5px; /* Adjust spacing between buttons */
+        }
+
+        #main {
+            flex: 1;
+            padding: 0px;
+        }
+
+        .main-content {
+            text-align: center;
+        }
+        .main-content2 {
+            background-color: #000000;
+            color: azure;
+            text-align: center;
+        }
+
+        .main-heading {
+            color: #000000;
+        }
+        h1{
+          padding-top: 10px;
+          margin-top: 0px;
+          padding-bottom: 10px;
+          font-size: 50px;
+        }
+        h2{
+          font-size: 50px;
+        }
+    </style>
 </head>
 <body>
-<div id="root"></div>
+    <header id="header">
+        <a href="/"><h3>HMS</h3></a>
+    </header>
 
-<script>
-  // Define your JavaScript logic here
-  // Note: You need to handle any interactions and dynamic content rendering here
-  // This includes fetching data from the server, updating UI, etc.
+    <div id="sidebar">
+        <div class="sidebar-button" onclick="window.location='/ViewOneHistory/'">View Medical History</div>
+        <div class="sidebar-button" onclick="window.location='/PatientsViewAppt'">View Appointments</div>
+        <div class="sidebar-button" onclick="window.location='/scheduleAppt'">Schedule Appointment</div>
+        <div class="sidebar-button" onclick="window.location='/Settings'">Settings</div>
+        <div class="sidebar-button" onclick="fetch('http://localhost:3001/endSession'); window.location='/'">Sign Out</div>
+    </div>
 
-  // Example of handling button click
-  function handleButtonClick(label) {
-    if (label === "Schedule Appointment") {
-      window.location = "/scheduleAppt";
-    } else if (label === "Sign Out") {
-      fetch("http://localhost:3001/endSession")
-        .then(response => {
-          if (response.ok) {
-            window.location = "/";
-          } else {
-            console.error("Failed to end session");
-          }
-        })
-        .catch(error => console.error("Error:", error));
-    }
-    // Add other conditions and actions as needed
-  }
+    <div id="main">
+        <div class="main-content2">
+            <h1 >HMS</h1>
+        </div>
+        <div class="main-content">
+            <h2 class="main-heading">Welcome Patient</h2>
+        </div>
+    </div>
 
-  // Render sidebar buttons
-  function renderSidebarButtons() {
-    const labels = ["View Medical History", "View Appointments", "Schedule Appointment", "Settings", "Sign Out"];
-    const sidebar = document.createElement("div");
-    sidebar.style.background = "#000000"; // Brand color
-    labels.forEach(label => {
-      const button = document.createElement("button");
-      button.textContent = label;
-      button.classList.add("sidebar-button");
-      button.addEventListener("click", () => handleButtonClick(label));
-      sidebar.appendChild(button);
-    });
-    return sidebar;
-  }
-
-  // Render header
-  function renderHeader() {
-    const header = document.createElement("header");
-    header.style.background = "#000000"; // Brand color
-    header.style.padding = "10px";
-    header.style.borderBottom = "1px solid grey";
-    const heading = document.createElement("h3");
-    const link = document.createElement("a");
-    link.href = "/";
-    link.textContent = "HMS";
-    link.style.color = "inherit";
-    link.style.textDecoration = "inherit";
-    heading.appendChild(link);
-    header.appendChild(heading);
-    return header;
-  }
-
-  // Render main content
-  function renderMainContent() {
-    const mainContent = document.createElement("div");
-    mainContent.style.padding = "20px";
-    const heading = document.createElement("h1");
-    heading.textContent = "Welcome Patient";
-    heading.style.color = "#000000";
-    mainContent.appendChild(heading);
-    return mainContent;
-  }
-
-  // Render the entire page
-  function renderPage() {
-    const root = document.getElementById("root");
-    root.appendChild(renderHeader());
-    const grid = document.createElement("div");
-    grid.style.display = "grid";
-    grid.style.gridTemplateColumns = "auto 1fr";
-    grid.style.height = "100vh";
-    grid.appendChild(renderSidebarButtons());
-    grid.appendChild(renderMainContent());
-    root.appendChild(grid);
-  }
-
-  // Call renderPage when the DOM content is loaded
-  document.addEventListener("DOMContentLoaded", renderPage);
-</script>
+    <!-- You may need to include necessary scripts here -->
 </body>
 </html>
