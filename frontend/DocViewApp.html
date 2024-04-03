@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS</title>
+    <!-- You may need to include CSS files for styling -->
+    <style>
+        /* Your CSS styles from App.css can be included here */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-header">
+            <a href="/" style="color: inherit; text-decoration: inherit;">
+                <h3>HMS</h3>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="panel panel-default p50 uth-panel">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>Concerns</th>
+                        <th>Symptoms</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- You'll need to iterate over apptlist and generate table rows accordingly -->
+                    <!-- Example: -->
+                    <!--
+                    <tr>
+                        <td>{appt.id}</td>
+                        <td>{appt.name}</td>
+                        <td>{new Date(appt.date).toLocaleDateString().substring(0,10)}</td>
+                        <td>{appt.starttime}</td>
+                        <td>{appt.concerns}</td>
+                        <td>{appt.symptoms}</td>
+                        <td>{appt.status}</td>
+                        <td>
+                            <a href={`/Diagnose/${appt.id}`} class="button">Diagnose</a>
+                        </td>
+                        <td>
+                            {appt.status === "NotDone" ?
+                                <a onclick="deleteAppointment(${appt.id})" class="button">Cancel</a>
+                                : <div></div>}
+                        </td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- You may need to include JavaScript for any interactivity -->
+    <script>
+        // You'll need JavaScript functions for fetching data and handling actions like deleteAppointment()
+    </script>
+</body>
+</html>

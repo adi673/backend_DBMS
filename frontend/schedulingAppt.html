@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduling Appointment</title>
+  <!-- Include Grommet CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.18.0/grommet.min.css">
+</head>
+<body>
+  <header>
+    <a href="/" style="color: inherit; text-decoration: inherit;">
+      <h3>HMS</h3>
+    </a>
+  </header>
+  <main>
+    <form id="appointmentForm">
+      <div class="input-group">
+        <label for="doctorSelect">Select Doctor:</label>
+        <select id="doctorSelect" required></select>
+      </div>
+      <div class="input-group">
+        <label for="dateTimeInput">Select Date & Time:</label>
+        <input type="text" id="dateTimeInput" placeholder="Select date & time" required readonly>
+        <button type="button" id="dateTimeButton">Select</button>
+      </div>
+      <div class="input-group">
+        <label for="concernsTextArea">Enter Your Concerns:</label>
+        <textarea id="concernsTextArea" placeholder="Enter your concerns..." required></textarea>
+      </div>
+      <div class="input-group">
+        <label for="symptomsTextArea">Enter Your Symptoms:</label>
+        <textarea id="symptomsTextArea" placeholder="Enter your symptoms..." required></textarea>
+      </div>
+      <button type="submit">Attempt To Schedule</button>
+    </form>
+  </main>
+
+  <!-- Include React and ReactDOM (for DropContent functionality) -->
+  <!-- Note: This is just for the sake of functionality, you won't directly convert React to HTML -->
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <!-- Your script handling logic will go here -->
+  <script>
+    // Your JavaScript logic to handle dropdown, date time picker, and form submission will go here
+  </script>
+</body>
+</html>

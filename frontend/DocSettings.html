@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Settings</title>
+    <!-- Include Grommet CSS here -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles can be added here */
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        /* Adjust as needed */
+    </style>
+</head>
+<body>
+    <header class="app-bar">
+        <a href="/" style="color: inherit; text-decoration: inherit;">
+            <h3>HMS</h3>
+        </a>
+    </header>
+    <div class="content">
+        <h3>Password Change</h3>
+        <form id="passwordChangeForm">
+            <div class="form-field">
+                <label for="oldPassword">Old Password</label>
+                <input type="password" id="oldPassword" name="oldPassword" required>
+            </div>
+            <br>
+            <div class="form-field">
+                <label for="newPassword">New Password</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <br>
+            <button type="submit" id="changePasswordBtn">Change Password</button>
+        </form>
+    </div>
+    <!-- Include Grommet JS here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.js"></script>
+    <script>
+        // JavaScript for handling form submission can be added here
+        document.getElementById('passwordChangeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Add your fetch request here to handle form submission
+        });
+    </script>
+</body>
+</html>

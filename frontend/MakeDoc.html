@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+        /* For simplicity, I'm not translating all the styles from the React code */
+    </style>
+</head>
+<body>
+
+<header class="app-bar" style="background-color: #000000; padding: 0 16px; display: flex; align-items: center; justify-content: space-between;">
+    <a href="/" style="color: inherit; text-decoration: inherit;">
+        <h3 style="margin: 0;">HMS</h3>
+    </a>
+</header>
+
+<div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div style="width: 400px;">
+        <p style="color: #AAAAAA;">Doctor's registration form:</p>
+        <form method="post" onsubmit="handleSubmit(event)">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Please enter your first name." pattern="[a-zA-Z]+" />
+            <br>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Please enter your last name." pattern="[a-zA-Z]+" />
+            <br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Please enter your email." />
+            <br>
+
+            <label for="schedule">Schedule No</label>
+            <input type="text" id="schedule" name="schedule" required placeholder="Please enter schedule number" />
+            <br>
+
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" required placeholder="Female or Male" />
+            <br>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Please enter your password." pattern="(?=.*\d{2})(?=.*[a-zA-Z]).{8,}" title="At least 8 characters containing 2 digits" />
+            <br>
+            
+            <div style="display: flex; justify-content: space-between;">
+                <button type="button" onclick="window.location.href='/'">Cancel</button>
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        
+        // Custom logic for form submission goes here
+        console.log('Form submitted with data:', Object.fromEntries(formData));
+        
+        // Redirect to DocHome
+        window.location.href = '/DocHome';
+    }
+</script>
+
+</body>
+</html>

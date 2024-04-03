@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - View One History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="grommetux-box" style="background-color: #000000; padding: small;">
+            <a href="/" style="color: inherit; text-decoration: inherit;">
+                <h3 style="margin: 0;">HMS</h3>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="panel panel-default p50 uth-panel">
+            <!-- Rendered Data from medhiststate -->
+            <table>
+                <tbody>
+                    <tr>
+                        <th><strong>Name</strong></th>
+                        <td><!-- Render patient.name here --></td>
+                        <td></td>
+                        <th><strong>Email</strong></th>
+                        <td><!-- Render patient.email here --></td>
+                    </tr>
+                    <tr>
+                        <th><strong>Gender</strong></th>
+                        <td><!-- Render patient.gender here --></td>
+                        <td></td>
+                        <th><strong>Address</strong></th>
+                        <td><!-- Render patient.address here --></td>
+                    </tr>
+                    <!-- Similar rows for other details like Conditions, Surgeries, Medications -->
+                </tbody>
+            </table>
+            <hr>
+            <!-- Rendered Data from medhiststate2 -->
+            <!-- Loop through each patient in medhiststate2 and render their details -->
+            <table>
+                <tbody>
+                    <!-- For each patient in medhiststate2 -->
+                    <tr>
+                        <th><strong>Date</strong></th>
+                        <td><!-- Render patient.date here --></td>
+                        <td></td>
+                        <th><strong>Doctor</strong></th>
+                        <td><!-- Render patient.doctor here --></td>
+                    </tr>
+                    <!-- Similar rows for Concerns, Symptoms, Diagnosis, Prescription -->
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

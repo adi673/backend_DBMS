@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HMS</title>
+<style>
+  /* Define your CSS styles here */
+  /* Note: You may need to adjust styles for proper layout and appearance */
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+  // Define your JavaScript logic here
+  // Note: You need to handle any interactions and dynamic content rendering here
+  // This includes fetching data from the server, updating UI, etc.
+
+  // Example of handling button click
+  function handleButtonClick(label) {
+    if (label === "Schedule Appointment") {
+      window.location = "/scheduleAppt";
+    } else if (label === "Sign Out") {
+      fetch("http://localhost:3001/endSession")
+        .then(response => {
+          if (response.ok) {
+            window.location = "/";
+          } else {
+            console.error("Failed to end session");
+          }
+        })
+        .catch(error => console.error("Error:", error));
+    }
+    // Add other conditions and actions as needed
+  }
+
+  // Render sidebar buttons
+  function renderSidebarButtons() {
+    const labels = ["View Medical History", "View Appointments", "Schedule Appointment", "Settings", "Sign Out"];
+    const sidebar = document.createElement("div");
+    sidebar.style.background = "#000000"; // Brand color
+    labels.forEach(label => {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.classList.add("sidebar-button");
+      button.addEventListener("click", () => handleButtonClick(label));
+      sidebar.appendChild(button);
+    });
+    return sidebar;
+  }
+
+  // Render header
+  function renderHeader() {
+    const header = document.createElement("header");
+    header.style.background = "#000000"; // Brand color
+    header.style.padding = "10px";
+    header.style.borderBottom = "1px solid grey";
+    const heading = document.createElement("h3");
+    const link = document.createElement("a");
+    link.href = "/";
+    link.textContent = "HMS";
+    link.style.color = "inherit";
+    link.style.textDecoration = "inherit";
+    heading.appendChild(link);
+    header.appendChild(heading);
+    return header;
+  }
+
+  // Render main content
+  function renderMainContent() {
+    const mainContent = document.createElement("div");
+    mainContent.style.padding = "20px";
+    const heading = document.createElement("h1");
+    heading.textContent = "Welcome Patient";
+    heading.style.color = "#000000";
+    mainContent.appendChild(heading);
+    return mainContent;
+  }
+
+  // Render the entire page
+  function renderPage() {
+    const root = document.getElementById("root");
+    root.appendChild(renderHeader());
+    const grid = document.createElement("div");
+    grid.style.display = "grid";
+    grid.style.gridTemplateColumns = "auto 1fr";
+    grid.style.height = "100vh";
+    grid.appendChild(renderSidebarButtons());
+    grid.appendChild(renderMainContent());
+    root.appendChild(grid);
+  }
+
+  // Call renderPage when the DOM content is loaded
+  document.addEventListener("DOMContentLoaded", renderPage);
+</script>
+</body>
+</html>

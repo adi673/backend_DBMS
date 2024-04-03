@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="root">
+        <!-- This is where the React app will be rendered -->
+    </div>
+
+    <!-- Include React library -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Your React components -->
+    <script src="App.js"></script>
+
+    <!-- Your main script -->
+    <script>
+        // This is where ReactDOM.render() will be called
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+</body>
+</html>

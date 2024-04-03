@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Home Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+        }
+        .brand-background {
+            background: #000000;
+            color: #ffffff;
+        }
+        .sidebar-button {
+            padding: 16px 24px;
+            cursor: pointer;
+        }
+        .sidebar-button:hover {
+            background: #DADADA;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <header class="brand-background" style="border-bottom: 1px solid grey;">
+        <a href="/" style="color: inherit; text-decoration: inherit;">
+            <h3 style="margin: 0;">HMS</h3>
+        </a>
+    </header>
+    <div class="main-content">
+        <h1>Welcome Doctor</h1>
+    </div>
+    <script>
+        function handleSidebarButtonClick(label) {
+            if (label === "Appointments") {
+                window.location = "/ApptList";
+            } else if (label === "Sign Out") {
+                fetch("http://localhost:3001/endSession")
+                    .then(response => {
+                        if (response.ok) {
+                            window.location = "/";
+                        } else {
+                            console.error("Error signing out.");
+                        }
+                    })
+                    .catch(error => console.error(error));
+            } else if (label === "Settings") {
+                window.location = "/DocSettings";
+            } else if (label === "View Patients") {
+                window.location = "/MedHistView";
+            }
+        }
+    </script>
+    <div class="sidebar brand-background">
+        <button class="sidebar-button" onclick="handleSidebarButtonClick('Appointments')">Appointments</button>
+        <button class="sidebar-button" onclick="handleSidebarButtonClick('View Patients')">View Patients</button>
+        <button class="sidebar-button" onclick="handleSidebarButtonClick('Settings')">Settings</button>
+        <button class="sidebar-button" onclick="handleSidebarButtonClick('Sign Out')">Sign Out</button>
+    </div>
+</body>
+</html>

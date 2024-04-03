@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - Patients View Appointments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.css">
+    <style>
+        /* You may need to include additional CSS styles from App.css */
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="grommetux-box" style="background-color: #000000; padding-left: medium; padding-right: small; padding-top: small; padding-bottom: small; z-index: 1;">
+            <a href="/" style="color: inherit; text-decoration: inherit;">
+                <h3 style="margin: 0;">HMS</h3>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="panel panel-default p50 uth-panel">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Date of Appointment</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Concerns</th>
+                        <th>Symptoms</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- This part should be dynamically generated in your application -->
+                    <!-- Sample row -->
+                    <tr>
+                        <td align="center">2024-04-02</td>
+                        <td align="center">08:00</td>
+                        <td align="center">09:00</td>
+                        <td align="center">Sample Concerns</td>
+                        <td align="center">Sample Symptoms</td>
+                        <td align="center">NotDone</td>
+                        <td>
+                            <a href="/showDiagnoses/1">
+                                <button>See Diagnosis</button>
+                            </a>
+                        </td>
+                        <td>
+                            <button onclick="deleteAppointment(1)">Cancel</button>
+                        </td>
+                    </tr>
+                    <!-- End of sample row -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- React usually injects script tags for app logic -->
+    <script>
+        // You may need to include the logic for the deleteAppointment function
+        function deleteAppointment(appointmentId) {
+            // Logic to delete appointment
+            // Example:
+            // fetch('http://localhost:3001/deleteAppt?uid=' + appointmentId)
+            //     .then(() => window.location.reload());
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample App</title>
+</head>
+<body>
+    <div id="root">
+        <!-- Content will be rendered here -->
+    </div>
+
+    <!-- React Router library -->
+    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+    
+    <script>
+        function fetchUserData() {
+            fetch("http://localhost:3001/userInSession")
+                .then(res => res.json())
+                .then(res => {
+                    let string_json = JSON.stringify(res);
+                    let email_json = JSON.parse(string_json);
+                    let email = email_json.email;
+                    let who = email_json.who;
+                    if (email === "") {
+                        renderComponent('<LogIn />');
+                    } else {
+                        if (who === "pat") {
+                            renderComponent('<Home />');
+                        } else {
+                            renderComponent('<DocHome />');
+                        }
+                    }
+                });
+        }
+
+        function renderComponent(component) {
+            document.getElementById('root').innerHTML = component;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchUserData();
+        });
+    </script>
+
+    <!-- Your components will be defined here -->
+    <!-- For simplicity, I'll just include placeholder divs -->
+    <div id="LogIn">
+        <!-- Content for LogIn component -->
+    </div>
+    <div id="Home">
+        <!-- Content for Home component -->
+    </div>
+    <div id="DocHome">
+        <!-- Content for DocHome component -->
+    </div>
+
+    <!-- Other components would be defined similarly -->
+
+</body>
+</html>

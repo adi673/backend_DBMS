@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <!-- Include Grommet CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.css" rel="stylesheet">
+    <style>
+        /* Define your custom styles here */
+    </style>
+</head>
+<body>
+    <div id="root">
+        <header class="app-bar" style="background: #000000; padding-left: medium; padding-right: small; padding-top: small; padding-bottom: small;">
+            <a style="color: inherit; text-decoration: inherit;" href="/"><h3 style="margin: 0;">HMS</h3></a>
+        </header>
+        <div style="padding: small;">
+            <form id="settings-form">
+                <h3>Password Change</h3>
+                <div class="form-field">
+                    <label for="oldPassword">Old password</label>
+                    <input type="password" id="oldPassword" name="oldPassword" required>
+                </div>
+                <br>
+                <div class="form-field">
+                    <label for="newPassword">New password</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <br>
+                <button type="submit" id="changePasswordButton">Change Password</button>
+            </form>
+        </div>
+    </div>
+    <!-- Include React and ReactDOM scripts here if needed -->
+    <!-- Include your custom JavaScript scripts here if needed -->
+</body>
+</html>
