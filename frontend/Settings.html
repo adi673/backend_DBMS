@@ -3,36 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
-    <!-- Include Grommet CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/grommet/2.17.0/grommet.min.css" rel="stylesheet">
+    <title>HMS Settings</title>
     <style>
-        /* Define your custom styles here */
+        /* CSS styles */
+        .app-bar {
+            background: #000000;
+            padding-left: 20px;
+            padding-top: 0px;
+            color: #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .main-container {
+            padding-left: 8px;
+            padding-top: 20px;
+            padding-right: 20px;
+            margin-top: 100px; /* Adjusted margin-top to account for the fixed header */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid #000000; /* Adding a bottom border instead of a box */
+            background-color: transparent; /* Making the background transparent */
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px; /* Set padding to make button circular */
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px /* Make the button circular */
+        }
     </style>
 </head>
 <body>
-    <div id="root">
-        <header class="app-bar" style="background: #000000; padding-left: medium; padding-right: small; padding-top: small; padding-bottom: small;">
-            <a style="color: inherit; text-decoration: inherit;" href="/"><h3 style="margin: 0;">HMS</h3></a>
-        </header>
-        <div style="padding: small;">
-            <form id="settings-form">
-                <h3>Password Change</h3>
-                <div class="form-field">
-                    <label for="oldPassword">Old password</label>
-                    <input type="password" id="oldPassword" name="oldPassword" required>
-                </div>
-                <br>
-                <div class="form-field">
-                    <label for="newPassword">New password</label>
-                    <input type="password" id="newPassword" name="newPassword" required>
-                </div>
-                <br>
-                <button type="submit" id="changePasswordButton">Change Password</button>
-            </form>
-        </div>
+    <header class="app-bar">
+        <a href="/" style="color: inherit; text-decoration: inherit;">
+            <h1>HMS</h1>
+        </a>
+    </header>
+    <div class="main-container">
+        <h3>Password Change</h3>
+        <form id="password-change-form">
+            <label for="oldPassword">Old password</label>
+            <input type="password" id="oldPassword" name="oldPassword" required><br>
+            <label for="newPassword">New password</label>
+            <input type="password" id="newPassword" name="newPassword" required><br>
+            <button type="submit" id="changePasswordBtn">Change Password</button>
+        </form>
     </div>
-    <!-- Include React and ReactDOM scripts here if needed -->
-    <!-- Include your custom JavaScript scripts here if needed -->
+    <script src="app.js"></script> <!-- Assuming you have a JavaScript file named app.js -->
 </body>
 </html>
